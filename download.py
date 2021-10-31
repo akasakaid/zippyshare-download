@@ -7,7 +7,7 @@ try:
 except ImportError:
 	exit("# import error !")
 
-url = "https://www40.zippyshare.com/v/6gtKYEqj/file.html"
+#url = "https://www40.zippyshare.com/v/6gtKYEqj/file.html"
 r = requests.Session()
 
 
