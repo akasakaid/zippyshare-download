@@ -1,6 +1,6 @@
 import os
 import re
-import argparse
+import sys
 try:
 	import click
 	import requests
@@ -25,10 +25,9 @@ def download(url):
 		exit(f"# failed download from {url}")
 
 def main():
-	parser = argparse.ArgumentParser(description="Zippyshare Downloader")
-	parser.add_argument("--url",dest="url",help="url for download",required=True)
-	args = parser.parse_args()
-	download(args.url)
+	if len(sys.argv) < 2:
+		exit("# how to use : python {} zippyshare_url".format(sys.argv[0]))
+	download(sys.argv[1])
 
 try:
 	main()
