@@ -7,7 +7,7 @@ try:
 except ImportError:
 	exit("# import error !")
 
-#url = "https://www40.zippyshare.com/v/6gtKYEqj/file.html"
+#url = "https://www48.zippyshare.com/v/8wuhRqsI/file.html"
 r = requests.Session()
 
 
@@ -15,18 +15,13 @@ r = requests.Session()
 def download(url):
 	try:
 		req = r.get(url)
-		var_n = eval(re.search('var n = (.*?);',req.text).group(1))
-		var_b = eval(re.search('var b = (.*?);',req.text).group(1))
-		var_z = eval(re.search('var z = (.*?);',req.text).group(1))
+		open("hasil.html","wb").write(req.content)
 		origin = re.search('https://(.*?)/',url).group(1)
 		
 		elemen = re.search('document.getElementById\(\'dlbutton\'\).href = \"(.*?)\" \+ \((.*?)\) \+ \"(.*?)\";',req.text)
-		elemen = re.search('document.getElementById\(\'dlbutton\'\).href = "(.*?)"\+\((.*?)\)\+\"(.*?)\";',req.text)
-		matematika = var_n + var_b + var_z - 3
-		url_download = "https://" + origin + elemen.group(1) + str(matematika) + elemen.group(3)
+		url_download = "https://" + origin + elemen.group(1) + str(eval(elemen.group(2))) + elemen.group(3)
 		print("# redirect to browser !")
 		click.launch(url_download)
-		print(url_download)
 	except ValueError:
 		exit(f"# failed download from {url}")
 
