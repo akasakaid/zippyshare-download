@@ -1,4 +1,5 @@
 
+
 # zippyshare download
 
 install module first 
@@ -13,3 +14,8 @@ or try using exe file
     open cmd / command promp
     enter "download.exe <url zippyshare>"
 
+or try this
+
+    double click on download.exe 
+    input url zippysahre
+    and wait you be redirect to browser ^-^
