@@ -19,3 +19,4 @@ or try this
     double click on download.exe 
     input url zippysahre
     and wait you be redirect to browser ^-^
+
